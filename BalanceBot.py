@@ -4,7 +4,7 @@ from telebot import types
 
 connect = sqlite3.connect(f'./data.db', check_same_thread=False)
 cursor = connect.cursor()
-cursor.execute(f'create table Money(phone_number str, card_number int, balance_sber int,balance_partners int')
+cursor.execute(f'create table Money(phone_number str, card_number int, balance_sber int,balance_partners int)')
 
 bot = telebot.TeleBot('7147815324:AAHG2-wR52qQfwdHFZoKxMObvAI_6owVafM')
 
