@@ -5,7 +5,7 @@ from functions import *
 from db_functions import *
 from markup import create_markup
 
-bot = telebot.TeleBot('2054290165:AAGo7Dqybp5fkqORKccJZdmZTXNcohdpAKw')
+bot = telebot.TeleBot('2054290165:AAGNEgLlp1eUDWs_NRldLCnshWl4-5nx-ug')
 
 create_table('Money',
              'phone_number str, card_number int, balance_sber int,balance_partners int')
