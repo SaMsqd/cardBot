@@ -5,7 +5,7 @@ from functions import *
 from db_functions import *
 from markup import create_markup
 
-bot = telebot.TeleBot('2054290165:AAGNEgLlp1eUDWs_NRldLCnshWl4-5nx-ug')
+bot = telebot.TeleBot('7147815324:AAHG2-wR52qQfwdHFZoKxMObvAI_6owVafM')
 
 create_table('Money',
              'phone_number str, card_number int, balance_sber int,balance_partners int')
@@ -353,9 +353,15 @@ def limited_2(message):
                     smile = '🅾️'
                 else:
                     smile = '🟡'
-                bot.send_message(message.chat.id,
-                                f'{smile} <b>{elem[1]}</b> | s - {make_price_beautiful(elem[2])} | p - {make_price_beautiful(elem[3])}',
-                                parse_mode='html')
+                if len(str(elem[1])) == 4:
+                    bot.send_message(message.chat.id,
+                                    f'{smile} <b>{elem[1]}</b> | s - {make_price_beautiful(elem[2])} | p - {make_price_beautiful(elem[3])}',
+                                    parse_mode='html')
+                else:
+                    elem1 = (4 - len(str(elem[1]))) *'0' + str(elem[1])
+                    bot.send_message(message.chat.id,
+                                    f'{smile} <b>{elem1}</b> | s - {make_price_beautiful(elem[2])} | p - {make_price_beautiful(elem[3])}',
+                                    parse_mode='html')
     else:
         bot.send_message(message.chat.id,
                          f'Успешно',
